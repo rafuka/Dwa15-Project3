@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "10a2871f1b45c8dccd1e8dc8f6a2e48f",
+    "hash": "75321216e6fce347ca6a53b23c0efd59",
     "content-hash": "8b1485987e7c5949da82435d403e52e8",
     "packages": [
         {
@@ -739,16 +739,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "a93889dfb1c0ae465b62236ede8d00d3ea260952"
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/a93889dfb1c0ae465b62236ede8d00d3ea260952",
-                "reference": "a93889dfb1c0ae465b62236ede8d00d3ea260952",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c7e26a21ba357863de030f0b9e701c7d04593774",
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774",
                 "shasum": ""
             },
             "require": {
@@ -783,7 +783,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-03-18 17:16:04"
+            "time": "2016-03-18 20:34:03"
         },
         {
             "name": "psr/log",

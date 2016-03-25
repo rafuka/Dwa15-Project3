@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +25,28 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+  Route::get('/', 'MainController@getIndex');
+
+  Route::get('/gentext', function() {
+
+  });
+
+  Route::post('/gentext', 'MainController@postText');
+
+
+  Route::get('/genuser', function() {
+
+  });
+  
+  Route::post('/genuser', 'MainController@postUser');
+
+
+
+
+
+  Route::get('/test', function() {
+    return ('testing route');
+  });
+
 });
