@@ -27,20 +27,9 @@ class MainController extends Controller {
     return $view;
   }
 
-  public function postText() {
-    $view = 'NUMBER OF PARAGRAPHS: ' . $_POST['nump'];
-    $view .= '<br><a href="/">Back Home</a>';
 
-    return $view;
 
-  }
-
-  public function postUser() {
-    $view = 'NUMBER OF USERS: ' . $_POST['numu'];
-    $view .= '<br><a href="/">Back Home</a>';
-
-    return $view;
-  }
+  
 }
 
 ?>

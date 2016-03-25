@@ -32,14 +32,14 @@ Route::group(['middleware' => ['web']], function () {
 
   });
 
-  Route::post('/gentext', 'MainController@postText');
+  Route::post('/gentext', 'TextController@postText');
 
 
   Route::get('/genuser', function() {
 
   });
-  
-  Route::post('/genuser', 'MainController@postUser');
+
+  Route::post('/genuser', 'UserController@postUser');
 
 
 
