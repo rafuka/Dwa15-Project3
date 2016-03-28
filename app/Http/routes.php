@@ -46,7 +46,20 @@ Route::group(['middleware' => ['web']], function () {
 
 
   Route::get('/test', function() {
-    return ('testing route');
+    $xmldata = file_get_contents("http://www.colourlovers.com/api/palettes/random");
+    $xml = simplexml_load_string($xmldata);
+    print_r($xml);
+    print_r($xml->palette->colors->hex[0]);
+    print_r($xml->palette->colors->hex[1]);
+    print_r($xml->palette->colors->hex[2]);
+    echo '<br>';
+    echo '<br>';
+    $generator = new Badcow\LoremIpsum\Generator();
+    $paragraphs = $generator->getParagraphs(5);
+    echo implode ('<p>', $paragraphs );
+    echo '<br>';
+    echo '<br>';
+    return ('TESTING ROUTE');
   });
 
 });
