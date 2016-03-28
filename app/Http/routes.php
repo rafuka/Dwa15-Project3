@@ -52,13 +52,24 @@ Route::group(['middleware' => ['web']], function () {
     print_r($xml->palette->colors->hex[0]);
     print_r($xml->palette->colors->hex[1]);
     print_r($xml->palette->colors->hex[2]);
+
     echo '<br>';
     echo '<br>';
+
     $generator = new Badcow\LoremIpsum\Generator();
     $paragraphs = $generator->getParagraphs(5);
     echo implode ('<p>', $paragraphs );
+
     echo '<br>';
     echo '<br>';
+
+    $faker1 = Faker\Factory::create();
+    for ($i = 0; $i < 3; $i ++) {
+      echo $faker1->name . '<br>';
+      echo $faker1->address . '<br>';
+      echo '<img src="'. $faker1->imageUrl(300, 300, 'people'). '">' . '<br>';
+    }
+
     return ('TESTING ROUTE');
   });
 
