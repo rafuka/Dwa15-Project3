@@ -107,3 +107,19 @@ footer a {
 footer a:hover {
   color: white;
 }
+
+.color {
+  background-color: #eee;
+  width: 130px;
+  height: 130px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  transition: all .5s ease-in-out;
+}
+
+.color p {
+  color: white;
+  font-weight: 900;
+}

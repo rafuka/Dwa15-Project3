@@ -58,8 +58,24 @@
       <div class="col-xs-12">
         <div class="wrapper">
           <h2>Random Color Palette</h2>
+          <div id="colors-wrapper">
+            @foreach($colors as $color)
+              <div style="background-color: #<?php echo $color ?>" class="color">
+                <p>#{{ $color }}</p>
+              </div>
+            @endforeach
+
+          </div>
+          <form id="color-form" method="GET" action="/">
+            <button id="color-btn" class="btn btn-primary btn-lg" type="submit">Gimme some color!</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
+@stop
+
+@section('scripts')
+  <script src="js/ajaxcolor.js">
+  </script>
 @stop

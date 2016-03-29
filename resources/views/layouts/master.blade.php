@@ -19,6 +19,7 @@
     <p>Created on Spring 2016 by J.R. Garcia</p>
   </footer>
 
+  <script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
   @yield('scripts')
 </body>
 </html>

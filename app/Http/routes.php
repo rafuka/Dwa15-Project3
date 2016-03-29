@@ -28,8 +28,10 @@ Route::group(['middleware' => ['web']], function () {
 
   Route::get('/', 'MainController@getIndex');
 
-  Route::get('/gentext', function() {
+  Route::post('/', 'MainController@postIndex');
 
+  Route::get('/gentext', function() {
+    return redirect('/');
   });
 
   Route::post('/gentext', 'TextController@postText');
@@ -42,7 +44,14 @@ Route::group(['middleware' => ['web']], function () {
   Route::post('/genuser', 'UserController@postUser');
 
 
+  Route::get('/colorgen', function() {
+    $xmldata = file_get_contents("http://www.colourlovers.com/api/palettes/random");
+    $xml = simplexml_load_string($xmldata);
 
+    $colors = $xml->palette->colors->hex;
+
+    return json_encode($colors);
+  });
 
 
   Route::get('/test', function() {
