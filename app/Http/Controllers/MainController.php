@@ -3,33 +3,15 @@
 namespace p3\Http\Controllers;
 
 use p3\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class MainController extends Controller {
 
   /* Responds to GET request on homesite */
   public function getIndex() {
-    $view = '<h1>this is the home page!</h1>';
-
-    $view .= '<form method="POST" action="/gentext">';
-    $view .= csrf_field();
-    $view .= 'Number of paragraphs:
-                <input type="number" name="nump"/>
-                <button type="submit">Go</button>
-              </form>';
-
-    $view .= '<form method="POST" action="/genuser">';
-    $view .= csrf_field();
-    $view .= 'Number of users:
-                <input type="number" name="numu" default="0"/>
-                <button type="submit">Go</button>
-              </form>';
-
-    return $view;
+    return view('main');
   }
 
-
-
-  
 }
 
 ?>

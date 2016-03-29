@@ -67,10 +67,19 @@ Route::group(['middleware' => ['web']], function () {
     for ($i = 0; $i < 3; $i ++) {
       echo $faker1->name . '<br>';
       echo $faker1->address . '<br>';
-      echo '<img src="'. $faker1->imageUrl(300, 300, 'people'). '">' . '<br>';
+      echo $faker1->phoneNumber . '<br>';
+      echo '<img src="'. $faker1->imageUrl(100, 100, 'people'). '">' . '<br>';
     }
 
     return ('TESTING ROUTE');
+    //return view('main');
   });
+
+  // Restricted routes for local environment
+  if (App::environment('local')) {
+    Route::get('/logs', function(){
+      return "hi!";
+    });
+  }
 
 });
