@@ -28,21 +28,17 @@ Route::group(['middleware' => ['web']], function () {
 
   Route::get('/', 'MainController@getIndex');
 
-  Route::post('/', 'MainController@postIndex');
-
   Route::get('/gentext', function() {
     return redirect('/');
   });
 
   Route::post('/gentext', 'TextController@postText');
 
-
   Route::get('/genuser', function() {
-
+    return redirect('/');
   });
 
   Route::post('/genuser', 'UserController@postUser');
-
 
   Route::get('/colorgen', function() {
     $xmldata = file_get_contents("http://www.colourlovers.com/api/palettes/random");
@@ -54,40 +50,13 @@ Route::group(['middleware' => ['web']], function () {
   });
 
 
-  Route::get('/test', function() {
-    $xmldata = file_get_contents("http://www.colourlovers.com/api/palettes/random");
-    $xml = simplexml_load_string($xmldata);
-    print_r($xml);
-    print_r($xml->palette->colors->hex[0]);
-    print_r($xml->palette->colors->hex[1]);
-    print_r($xml->palette->colors->hex[2]);
-
-    echo '<br>';
-    echo '<br>';
-
-    $generator = new Badcow\LoremIpsum\Generator();
-    $paragraphs = $generator->getParagraphs(5);
-    echo implode ('<p>', $paragraphs );
-
-    echo '<br>';
-    echo '<br>';
-
-    $faker1 = Faker\Factory::create();
-    for ($i = 0; $i < 3; $i ++) {
-      echo $faker1->name . '<br>';
-      echo $faker1->address . '<br>';
-      echo $faker1->phoneNumber . '<br>';
-      echo '<img src="'. $faker1->imageUrl(100, 100, 'people'). '">' . '<br>';
-    }
-
-    return ('TESTING ROUTE');
-    //return view('main');
-  });
-
   // Restricted routes for local environment
   if (App::environment('local')) {
-    Route::get('/logs', function(){
-      return "hi!";
+
+    Route::get('/test', function() {
+
+      return ('TESTING ROUTE');
+
     });
   }
 

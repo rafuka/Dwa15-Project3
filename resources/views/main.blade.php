@@ -17,7 +17,7 @@
           <p>Generate all the text you need. (Max: 150 Paragraphs)</p>
           <form method="POST" action="/gentext">
             {{ csrf_field() }}
-            <label for="nump">Number of paragraphs:</label>
+            <label for="nump">Enter a number of paragraphs:</label>
             <input id="nump" type="number" name="nump"><br>
             <button class="btn btn-primary btn-lg" type="submit">Gimme some text!</button>
             <div class="error">
@@ -32,7 +32,7 @@
           <p>Generate some Users to play With. (Max: 30 Users)</p>
           <form method="POST" action="/genuser">
             {{ csrf_field() }}
-            <label for="numu">Number of users:</label>
+            <label for="numu">Enter a number of users:</label>
             <input id="numu" type="number" name="numu">
             <br>
             <fieldset>
